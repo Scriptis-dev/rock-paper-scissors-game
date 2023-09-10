@@ -61,3 +61,22 @@ function decideGameWinner() {
 
 // game();
 // decideGameWinner();
+
+
+
+//Creating Elements
+
+
+const container = document.querySelector('#container');
+
+
+let buttons = document.querySelectorAll('.btn');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    let playerSelection = button.textContent;
+    console.log(playRound(playerSelection));    
+    document.getElementById('round-score').textContent = playRound(playerSelection);
+  });
+});
+
