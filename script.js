@@ -6,6 +6,9 @@ let computerScore = 0;
 const GAME_LOST_MSSG= "Too Bad! Computer won this game!";
 const GAME_WON_MSSG = "Congratulations! You won this game!";
 
+const USER_ROUND_WON_MSSG = 'You won this round';
+const USER_ROUND_LOST_MSSG = 'You lost this round';
+const USER_ROUND_TIE_MSSG = 'It\s a tie';
 
 function getComputerChoice() {
   const computerSelection = ["rock", "paper", "scissors"];
@@ -24,7 +27,7 @@ function getComputerChoice() {
 function playRound(playerSelection) {
   let computerSelection = getComputerChoice();
   playerSelection = playerSelection.toLowerCase();
-  
+
   if (playerSelection === computerSelection) {
     return USER_ROUND_TIE_MSSG;
   }
