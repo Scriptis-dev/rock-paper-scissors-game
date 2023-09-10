@@ -14,17 +14,17 @@ function getComputerChoice() {
   ];
 }
 
-function getPlayerSelection() {
-  let playerSelectionPrompt = prompt(
-    "Make your choice: ROCK, PAPER or SCISSORS!"
-  ).toLowerCase();
-  return playerSelectionPrompt;
-}
+// function getPlayerSelection() {
+//   let playerSelectionPrompt = prompt(
+//     "Make your choice: ROCK, PAPER or SCISSORS!"  // Delete this function
+//   ).toLowerCase();
+//   return playerSelectionPrompt;
+// }
 
-function playRound() {
-  let playerSelection = getPlayerSelection();
+function playRound(playerSelection) {
   let computerSelection = getComputerChoice();
-
+  playerSelection = playerSelection.toLowerCase();
+  
   if (playerSelection === computerSelection) {
     return USER_ROUND_TIE_MSSG;
   }
