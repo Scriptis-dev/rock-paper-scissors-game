@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    margin: auto;
+    padding: 0;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+
+#container {
+    max-width: 1440px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.display-result {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.player-stats,
+.computer-stats {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-name,
+.computer-name {
+    margin-bottom: 70px;
+}
