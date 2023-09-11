@@ -71,15 +71,24 @@ function decideGameWinner() {
 
 
 const container = document.querySelector('#container');
-
+const roundScoreDisplay = document.querySelector('#round-score-display')
 
 let buttons = document.querySelectorAll('.btn');
 
 buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    let playerSelection = button.textContent;
-    console.log(playRound(playerSelection));    
-    document.getElementById('round-score').textContent = playRound(playerSelection);
+  button.addEventListener('click', (e, roundScore) => {
+    let playerSelection = e.target.textContent;
+    roundScore = playRound(playerSelection);
+    document.createElement('p').textContent = roundScore;
+    
+    roundScoreDisplay.append(roundScore);
   });
 });
 
+
+function finishGame() {
+} {
+  if (roundScore >= 5) {
+    container.removeChild('#buttons');
+  }
+}

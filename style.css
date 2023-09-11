@@ -26,7 +26,7 @@ body {
 
 .display-result {
     height: 50%;
-    width: 50%;
+    width: 33%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -34,13 +34,20 @@ body {
 
 .player-stats,
 .computer-stats {
-    width: 50%;
+    width: 33%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.round-score-display {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .player-name,
 .computer-name {
     margin-bottom: 70px;
