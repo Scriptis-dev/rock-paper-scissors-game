@@ -12,8 +12,16 @@
     <title>Rock, Paper, Scissors</title>
 </head>
 <body>
+    <header class="main-header">
+        <h1 class="game-title">ROCK PAPER SCISSORS GAME</h1>
+    </header>
     <div id="container">
+        <div class="player-stats" id="player-stats">
+            <h2 class="player-name">PLAYER</h2>
+            <p class="player-score" id="player-score"></p>
+        </div>
         <div class="display-result" id="display-result">
+<<<<<<< HEAD
             <div class="player-stats">
                 <h2 class="player-name">PLAYER</h2>
                 <p class="player-score">1</p>
@@ -24,16 +32,22 @@
             <div class="computer-stats">
                 <h2 class="computer-name">COMPUTER</h2>
                 <p class="computer-score">1</p>
+=======
+            <div id="round-score-display">
+                <p id="round-score" class="round-score"></p>
+>>>>>>> rps-ui
             </div>
         </div>
-
-        
-        <div class="buttons" id="buttons">
-            <button type="submit" class="rock btn" id="rock-btn">ROCK</button>
-            <button type="submit" class="paper btn" id="paper-btn">PAPER</button>
-            <button type="submit" class="scissors btn" id="scissors-btn">SCISSORS</button>
-            
+        <div class="computer-stats" id="computer-stats">
+            <h2 class="computer-name" id="computer-name">COMPUTER</h2>
+            <p class="computer-score" id="computer-score"></p>
         </div>
+    </div>
+    <div class="buttons" id="buttons">
+        <button type="submit" class="rock btn" id="rock-btn">ROCK</button>
+        <button type="submit" class="paper btn" id="paper-btn">PAPER</button>
+        <button type="submit" class="scissors btn" id="scissors-btn">SCISSORS</button>
+        
     </div>
 </body>
 </html>

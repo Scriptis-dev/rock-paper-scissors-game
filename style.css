@@ -1,3 +1,14 @@
+:root {
+    --highlight-color: #FDCC51;
+    --card-bg-color: #DBEBE6;
+    --white-bg-color: #FAEFDF;
+}
+
+
+
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,39 +19,132 @@
 body {
     margin: auto;
     padding: 0;
+    background: var(--card-bg-color);
     font-size: 1.2rem;
     font-family: 'Roboto', sans-serif;
 }
 
 
 #container {
-    max-width: 1440px;
-    height: 100vh;
+    padding: 0px 140px;
+    width: auto;
+    height: 72vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header {
+    height: 10vh;
+    max-width: 100%;
+    background: var(--highlight-color);
+    border: 7px solid #000;
+    color: #000;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.game-title {
+    font-size: 6rem;
+    color: var(--white-bg-color);
+    -webkit-text-stroke: 5px #000;
+    text-shadow: 12px 8px #41464b;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1.6rem;
+}
 
 .display-result {
     height: 50%;
-    width: 50%;
+    width: 33%;
+    border: 7px solid #000;
+    background: var(--white-bg-color);
+    line-height: 4rem;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 2.5rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.round-score-display {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    /* align-items: center; */
 }
 
 .player-stats,
 .computer-stats {
-    width: 50%;
+    width: 30%;
+    height: 80%;
+    position: relative;
+    font-size: 12rem;
+    font-weight: 600;
+    border: 7px solid #000;
+    background-color: var(--white-bg-color); 
+    background-image: linear-gradient(to bottom, var(--highlight-color)  20%, rgba(0,0,0,0) 20%); 
+    box-shadow: 18px 22px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+ .player-name, 
+ .computer-name {
+        font-size: 3.2rem;
+        /* padding: 0px 22px; */
+        position: absolute;
+        top: 0;
+        letter-spacing: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: -190px; */
+        height: 20%;
+        width: 100%;
+        color: var(--white-bg-color);
+        -webkit-text-stroke: 3px #000;
+        /* text-shadow: 12px 8px #41464b; */
+        font-weight: 700;
+        /* background: #fff; */
+    };
+
+.player-score,
+.computer-score {
+    font-weight: 700;
+    /* font-size: 14rem; */
+    font-style: italic;
+    margin-top: -50px;
+}
+
+
+.buttons {
+    width: 100%;
+    height: 18vh;
+    background: var(--highlight-color);
+    border: 7px solid #000;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
 }
 
-.player-name,
-.computer-name {
-    margin-bottom: 70px;
+.btn {
+    width: 13vw;
+    height: 8vh;
+    padding: 14px 22px;
+    background: var(--white-bg-color);
+    border: 6px solid #000;
+    box-shadow: 12px 12px;
+    font-weight: 700;
+    font-size: 2.6rem;
 }
