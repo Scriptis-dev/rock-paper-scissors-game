@@ -1,7 +1,7 @@
 
 // function getPlayerSelection() {
 //   let playerSelectionPrompt = prompt(
-//     "Make your choice: ROCK, PAPER or SCISSORS!"  // Delete this function
+//     "Make your choice: ROCK, 
 //   ).toLowerCase();
 //   return playerSelectionPrompt;
 // }
