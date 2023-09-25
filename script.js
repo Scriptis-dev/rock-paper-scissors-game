@@ -1,94 +1,95 @@
-//Game Logic
+// //Game Logic
 
-let playerScore = 0;
-let computerScore = 0;
+// let playerScore = 0;
+// let computerScore = 0;
 
-const GAME_LOST_MSSG= "Too Bad! Computer won this game!";
-const GAME_WON_MSSG = "Congratulations! You won this game!";
+// const GAME_LOST_MSSG= "Too Bad! Computer won this game!";
+// const GAME_WON_MSSG = "Congratulations! You won this game!";
 
-const USER_ROUND_WON_MSSG = 'You won this round';
-const USER_ROUND_LOST_MSSG = 'You lost this round';
-const USER_ROUND_TIE_MSSG = 'It\s a tie';
+// const USER_ROUND_WON_MSSG = 'You won this round';
+// const USER_ROUND_LOST_MSSG = 'You lost this round';
+// const USER_ROUND_TIE_MSSG = 'It\s a tie';
 
-function getComputerChoice() {
-  const computerSelection = ["rock", "paper", "scissors"];
-  return computerSelection[
-    Math.floor(Math.random() * computerSelection.length)
-  ];
-}
-
-// function getPlayerSelection() {
-//   let playerSelectionPrompt = prompt(
-//     "Make your choice: ROCK, PAPER or SCISSORS!"  // Delete this function
-//   ).toLowerCase();
-//   return playerSelectionPrompt;
+// function getComputerChoice() {
+//   const computerSelection = ["rock", "paper", "scissors"];
+//   return computerSelection[
+//     Math.floor(Math.random() * computerSelection.length)
+//   ];
 // }
 
-function playRound(playerSelection) {
-  let computerSelection = getComputerChoice();
-  playerSelection = playerSelection.toLowerCase();
+// // function getPlayerSelection() {
+// //   let playerSelectionPrompt = prompt(
+// //     "Make your choice: ROCK, PAPER or SCISSORS!"  // Delete this function
+// //   ).toLowerCase();
+// //   return playerSelectionPrompt;
+// // }
 
-  if (playerSelection === computerSelection) {
-    return USER_ROUND_TIE_MSSG;
-  }
-  if (playerSelection === "rock" && computerSelection === "scissors") {
-    return USER_ROUND_WON_MSSG;
-  }
-  if (playerSelection === "paper" && computerSelection === "rock") {
-    return USER_ROUND_WON_MSSG;
-  }
-  if (playerSelection === "scissors" && computerSelection === "paper") {
-    return USER_ROUND_WON_MSSG;
-  }
-  return USER_ROUND_LOST_MSSG;
-}
+// function playRound(playerSelection) {
+//   let computerSelection = getComputerChoice();
+//   playerSelection = playerSelection.toLowerCase();
 
-function decideRoundWinner(roundResult) {
-  if(roundResult === USER_ROUND_WON_MSSG) {
-     playerScore += 1;
-  }
-  if (roundResult === USER_ROUND_LOST_MSSG) {
-     computerScore += 1;
-  }
-}
+//   if (playerSelection === computerSelection) {
+//     return USER_ROUND_TIE_MSSG;
+//   }
+//   if (playerSelection === "rock" && computerSelection === "scissors") {
+//     return USER_ROUND_WON_MSSG;
+//   }
+//   if (playerSelection === "paper" && computerSelection === "rock") {
+//     return USER_ROUND_WON_MSSG;
+//   }
+//   if (playerSelection === "scissors" && computerSelection === "paper") {
+//     return USER_ROUND_WON_MSSG;
+//   }
+//   return USER_ROUND_LOST_MSSG;
+// }
 
-function decideGameWinner() {
-    if (playerScore > computerScore) {
-        alert(GAME_WON_MSSG);
-    }
-    if (playerScore < computerScore) {
-        alert(GAME_LOST_MSSG);
-    }
-    alert('IT\'S A DRAW');
-}
+// function decideRoundWinner(roundResult) {
+//   if(roundResult === USER_ROUND_WON_MSSG) {
+//      playerScore += 1;
+//   }
+//   if (roundResult === USER_ROUND_LOST_MSSG) {
+//      computerScore += 1;
+//   }
+// }
 
-// game();
-// decideGameWinner();
+// function decideGameWinner() {
+//     if (playerScore > computerScore) {
+//         alert(GAME_WON_MSSG);
+//     }
+//     if (playerScore < computerScore) {
+//         alert(GAME_LOST_MSSG);
+//     }
+//     alert('IT\'S A DRAW');
+// }
+
+// // game();
+// // decideGameWinner();
 
 
 
-//Creating Elements
+// //Creating Elements
 
 
-const container = document.querySelector('#container');
-const roundScoreDisplay = document.querySelector('#round-score-display')
+// const container = document.querySelector('#container');
+// const roundScoreDisplay = document.querySelector('#round-score-display')
 
-let buttons = document.querySelectorAll('.btn');
+// let buttons = document.querySelectorAll('.btn');
 
-buttons.forEach((button) => {
-  button.addEventListener('click', (e, roundScore) => {
-    let playerSelection = e.target.textContent;
-    roundScore = playRound(playerSelection);
-    document.createElement('p').textContent = roundScore;
+// buttons.forEach((button) => {
+//   button.addEventListener('click', (e, roundScore) => {
+//     let playerSelection = e.target.textContent;
+//     roundScore = playRound(playerSelection);
+//     document.createElement('p').textContent = roundScore;
     
-    roundScoreDisplay.append(roundScore);
-  });
-});
+//     roundScoreDisplay.append(roundScore);
+//   });
+// });
 
 
-function finishGame() {
-} {
-  if (roundScore >= 5) {
-    container.removeChild('#buttons');
-  }
-}
+// function finishGame() {
+// } {
+//   if (roundScore >= 5) {
+//     container.removeChild('#buttons');
+//   }
+// }
+
