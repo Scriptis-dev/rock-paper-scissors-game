@@ -41,7 +41,7 @@ const GAME_WON_MSSG = "Congratulations! You won this game!";
 
 const USER_ROUND_WON_MSSG = 'You won this round';
 const USER_ROUND_LOST_MSSG = 'You lost this round';
-const USER_ROUND_TIE_MSSG = 'It\s a tie';
+const USER_ROUND_TIE_MSSG = 'It\'s a tie';
 
 function getComputerChoice() {
   const computerSelection = ["rock", "paper", "scissors"];
@@ -78,6 +78,9 @@ const computerStats = document.querySelector('.computer-stats');
 const computerScoreElement = document.querySelector('.computer-score');
 const playerScoreElement = document.querySelector('.player-score');
 let buttons = document.querySelectorAll(".btn");
+const gameWinnerMessage = document.createElement('div');
+gameWinnerMessage.classList.add('game-winner');
+container.append(gameWinnerMessage);
 let playerRoundResult = 0;
 let computerRoundResult = 0;
 let playedRounds = 0;
@@ -92,37 +95,27 @@ buttons.forEach((button) => {
     roundScoreDisplay.append(newRoundScoreElement);
     
     //Update user score after each round      
-    if (roundScore === "You won a round of Rock,Paper & Scissors...now fuck off!") {
+    if (roundScore === "You won this round") {
       playerRoundResult++;
-
       playerScoreElement.textContent = playerRoundResult;
     }
-    else if(roundScore === "You lost this round...You lost to a fucking computer!") {
-      computerRoundResult++;
-      
+    else if(roundScore === "You lost this round") {
+      computerRoundResult++;      
       computerScoreElement.textContent = computerRoundResult;
     }
-    else if(roundScore === "It\'s a fucking draw!") {
-      playerRoundResult++;
-      computerRoundResult++;
+    else if(roundScore === "It\'s a tie") {
       
-      playerScoreElement.textContent = playerRoundResult;
-      computerScoreElement.textContent = computerRoundResult;
+      // playerRoundResult++;
+      // computerRoundResult++;
+      
+      // playerScoreElement.textContent = playerRoundResult;
+      // computerScoreElement.textContent = computerRoundResult;
     }
 
     playedRounds++;
 
-
     // console.log(playedRounds);
-    if (playedRounds === 5) {
-      if (playerRoundResult > computerRoundResult) {
-        alert("Congratulations! You won the game!");
-      } else if (playerRoundResult < computerRoundResult) {
-        alert("Sorry, you lost the game.");
-      } else {
-        alert("It's a tie!");
-      }
-    }
+    announceWinner();
   });
 });
 
@@ -130,7 +123,17 @@ buttons.forEach((button) => {
 
 
 
-
+function announceWinner(){
+  if (playedRounds === 5) {
+    if (playerRoundResult > computerRoundResult) {
+      gameWinnerMessage.textContent = "Congratulations! You won the game!";
+    } else if (playerRoundResult < computerRoundResult) {
+      gameWinnerMessage.textContent = "Sorry, you lost the game.";
+    } else {
+      gameWinnerMessage.textContent = "It's a tie!";
+    }
+  }
+}
 
 
 
