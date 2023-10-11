@@ -1,40 +1,4 @@
 
-// function getPlayerSelection() {
-//   let playerSelectionPrompt = prompt(
-//     "Make your choice: ROCK, 
-//   ).toLowerCase();
-//   return playerSelectionPrompt;
-// }
-//Game Logic
-// //Add to DOM
-// let playerScore = 0;
-// function decideRoundWinner(roundResult) {
-//   if (roundResult === USER_ROUND_WON_MSSG) {
-//     playerScore += 1;
-//   }
-//   if (roundResult === USER_ROUND_LOST_MSSG) {
-//     computerScore += 1;
-//   }
-// }
-
-// function decideGameWinner() {
-//   if (playerScore > computerScore) {
-//     alert(GAME_WON_MSSG);
-//   }
-//   if (playerScore < computerScore) {
-//     alert(GAME_LOST_MSSG);
-//   }
-//   alert("IT'S A DRAW");
-// }
-
-// game();
-// decideGameWinner();
-// let computerScore = 0;
-
-
-
-
-
 //---GAME LOGIC
 const GAME_LOST_MSSG = "Too Bad! Computer won this game!";
 const GAME_WON_MSSG = "Congratulations! You won this game!";
@@ -67,7 +31,7 @@ function playRound(playerSelection) {
     return USER_ROUND_WON_MSSG;
   }
   return USER_ROUND_LOST_MSSG;
-}
+};
 
 //---CREATING ELEMENTS
 // document.addEventListener("click", (e) => console.log(e.target));
@@ -77,10 +41,11 @@ const playerStats = document.querySelector('.player-stats');
 const computerStats = document.querySelector('.computer-stats');
 const computerScoreElement = document.querySelector('.computer-score');
 const playerScoreElement = document.querySelector('.player-score');
+const popup = document.querySelector("#popup");
+popup.classList.add("hidden");
+const resetButton = document.querySelector("#popup button");
+const gameWinnerMessage = document.querySelector("#game-winner");
 let buttons = document.querySelectorAll(".btn");
-const gameWinnerMessage = document.createElement('div');
-gameWinnerMessage.classList.add('game-winner');
-container.append(gameWinnerMessage);
 let playerRoundResult = 0;
 let computerRoundResult = 0;
 let playedRounds = 0;
@@ -105,6 +70,7 @@ buttons.forEach((button) => {
     }
     else if(roundScore === "It\'s a tie") {
       
+
       // playerRoundResult++;
       // computerRoundResult++;
       
@@ -114,8 +80,7 @@ buttons.forEach((button) => {
 
     playedRounds++;
 
-    // console.log(playedRounds);
-    announceWinner();
+    showPopup();
   });
 });
 
@@ -123,7 +88,7 @@ buttons.forEach((button) => {
 
 
 
-function announceWinner(){
+function showPopup(){
   if (playedRounds === 5) {
     if (playerRoundResult > computerRoundResult) {
       gameWinnerMessage.textContent = "Congratulations! You won the game!";
@@ -132,11 +97,20 @@ function announceWinner(){
     } else {
       gameWinnerMessage.textContent = "It's a tie!";
     }
+    popup.classList.remove("hidden");
   }
 }
 
 
+// function resetGame() {
+//   // Reset the scores
+//   let playerRoundResult = 0;
+//   let computerRoundResult = 0;
+//   let playedRounds = 0;
 
+//   // Hide the popup
+//   popup.classList.add("hidden");
+// }
 
 
 
