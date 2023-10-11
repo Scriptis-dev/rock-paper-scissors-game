@@ -102,15 +102,19 @@ function showPopup(){
 }
 
 
-// function resetGame() {
-//   // Reset the scores
-//   let playerRoundResult = 0;
-//   let computerRoundResult = 0;
-//   let playedRounds = 0;
+function resetGame() {
+  // Reset the scores
+  playerRoundResult = 0;
+  computerRoundResult = 0;
+  playedRounds = 0;
 
-//   // Hide the popup
-//   popup.classList.add("hidden");
-// }
+  playerScoreElement.textContent = playerRoundResult;
+  computerScoreElement.textContent = computerRoundResult;
+  roundScoreDisplay.textContent = "";
+
+  // Hide the popup
+  popup.classList.add("hidden");
+}
 
 
 
